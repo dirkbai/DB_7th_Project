@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function(event) {
+document.addEventListener("DOMContentLoaded", () => {
 
 $('video').mediaelementplayer({
        features: ['playpause','progress','fullscreen','volume'],
@@ -6,6 +6,30 @@ $('video').mediaelementplayer({
        stretching: 'responsive'
      });
 
+
+
+  var vidi = document.getElementById("video");
+  var startingTime = [0, 4.130, 7.535, 11.270];
+
+  vidi.addEventListener('timeupdate', function(){
+    for (var i = 0; i < startingTime.length; i++) {
+      const timer = startingTime[i]
+      const curTime = vidi.currentTime;
+      if (timer <= curTime) {
+        console.log('it works');
+        } else {
+          console.log('this works too');
+        }
+      }
+    }
+  );
+
+
+});
+
+
+
+/*
 const vidi = document.getElementById("video");
 const span1 = document.querySelector('#c0');
 const span2 = document.querySelector('#c1');
@@ -19,7 +43,7 @@ function blacken() {
     span4.style.color = 'black';
   }
 
-/* query selector attr*/
+query selector attr
 vidi.addEventListener('timeupdate', function(){
   const curTime = vidi.currentTime;
   if (curTime > 0 && curTime < 4.12 ) {
@@ -38,4 +62,4 @@ vidi.addEventListener('timeupdate', function(){
     span4.style.color = '#ffba0a';
   }
   });
-});
+*/
