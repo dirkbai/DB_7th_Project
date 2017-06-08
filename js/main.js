@@ -9,19 +9,16 @@ $('video').mediaelementplayer({
 
 
   const vidi = document.getElementById("video");
-  const startingTime = [0, 4.130, 7.535, 11.270];
-
+  const startingTime = [0.1, 4.130, 7.535, 11.270];
+  const allSpan = document.querySelectorAll(".captions span");
   vidi.addEventListener('timeupdate', function(){
     for (let i = 0; i < startingTime.length; i++) {
       const timer = startingTime[i];
       const curTime = vidi.currentTime;
       const spanOr = document.querySelector('#c' + i);
-      const back_spn = i+-1;
-      const spanBck = document.querySelector('#c' + back_spn);
       if (timer <= curTime) {
+          allSpan.className = 'black';
           spanOr.className = 'orange';
-        } else {
-          spanBck.removeClass = 'orange';
         }
       }
     }

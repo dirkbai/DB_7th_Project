@@ -41,6 +41,10 @@ body {
   color: orange;
 }
 
+.black{
+  color: black;
+}
+
 @media (min-width: 768px) {
 
     .videoWrapper{
