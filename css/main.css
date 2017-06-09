@@ -9,13 +9,10 @@ body {
   color: #384047;
 }
 
-/*.wrapper {
-  max-width: 90%;
-  margin: 10px auto;
-  padding: 10px 20px;
-  background: #f4f7f8;
-  border-radius: 8px;
-}*/
+.mejs__controls:not([style*="display: none"]){
+  background-color: blue;
+}
+
 
 .video {
   max-width: 100%;
@@ -39,10 +36,6 @@ body {
 
 .orange{
   color: orange;
-}
-
-.black{
-  color: black;
 }
 
 @media (min-width: 768px) {
